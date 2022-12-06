@@ -9,7 +9,7 @@
         $content .= '<tr>
         <td>' . $row['nama'] . '</td>
         <td>' . $row['deskripsi'] . '</td>
-        <td>' . $row['isi'] . '</td>
+        <td>' . (strlen($row['isi']) < 60 ? $row['isi'] : substr($row['isi'], 0, 60) . "...") . '</td>
         <td>' . $url_nologo . '</td>
         <td>' . $url_logo . '</td>
         </tr>';
@@ -46,11 +46,11 @@
                                     </tr>
                                     <tr>
                                         <td>Deskripsi</td>
-                                        <td><input type="text" id="inp_deskripsi" name="inp_deskripsi" autocomplete="off" maxlength="90" class="form-control"></td>
+                                        <td><input type="text" id="inp_deskripsi" name="inp_deskripsi" autocomplete="off" maxlength="240" class="form-control"></td>
                                     </tr>
                                     <tr>
                                         <td>Isi QR Code <span class="text-danger">*</span></td>
-                                        <td><input type="text" id="inp_isi" name="inp_isi" autocomplete="off" maxlength="90" class="form-control"></td>
+                                        <td><input type="text" id="inp_isi" name="inp_isi" autocomplete="off" maxlength="240" class="form-control"></td>
                                     </tr>
                                     <tr>
                                         <td colspan="2">

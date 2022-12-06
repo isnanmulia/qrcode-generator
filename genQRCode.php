@@ -4,8 +4,9 @@
         $db = new SQLite3('qrcode.db');
         $storage = 'generated/';
         if (!file_exists($storage)) mkdir($storage);
-        $nama = strtolower($_POST["inp_nama"]);
-        $fileqr = str_replace('', '-', $nama) . '.png';
+        $nama = $_POST["inp_nama"];
+        $lnama = strtolower($nama);
+        $fileqr = str_replace(' ', '-', $nama) . '.png';
         $fileqrlogo = str_replace(' ', '-', $nama) . '-logo.png';
         $filelogo = 'LogoRS.png';
         $isi = $_POST["inp_isi"];
